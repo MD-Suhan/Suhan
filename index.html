@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Portfolio | Terminal Vision</title>
+    <title>MD.Suhan's Portfolio | Terminal Vision</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono&display=swap');
@@ -78,20 +79,58 @@
             0% { top: 0%; }
             100% { top: 100%; }
         }
+
+        /* Contact Section Hover Expansion Logic */
+        .contact-pill {
+            width: 64px; /* Icon size only */
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            white-space: nowrap;
+        }
+
+        .pill-text {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.4s ease;
+        }
+
+        @media (min-width: 768px) {
+            .contact-pill:hover {
+                width: 220px; /* Expands on hover */
+                background: rgba(0, 242, 255, 0.1);
+                border-color: var(--primary);
+            }
+            .contact-pill:hover .pill-text {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Contact Section Mobile State: Always Expanded */
+        @media (max-width: 767px) {
+            .contact-pill {
+                width: 100%;
+                max-width: 280px;
+            }
+            .pill-text {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
     </style>
 </head>
 <body>
-
     <div class="bg-grid"></div>
 
     <nav class="fixed w-full z-50 nav-blur border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-xl font-bold tracking-widest tech-gradient font-mono">SYSTEM.CORE</div>
-            <div class="hidden md:flex space-x-10 text-xs font-bold uppercase tracking-widest">
+            <div class="text-xl font-bold tracking-widest tech-gradient font-mono">Mr_X.CORE</div>
+            <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest">
                 <a href="#home" class="hover:text-[#00f2ff] transition-colors">// HOME</a>
                 <a href="#skills" class="hover:text-[#00f2ff] transition-colors">// SKILLS</a>
                 <a href="#experience" class="hover:text-[#00f2ff] transition-colors">// LOGS</a>
+                <a href="#projects" class="hover:text-[#00f2ff] transition-colors">// PROJECTS</a>
                 <a href="#education" class="hover:text-[#00f2ff] transition-colors">// EDU</a>
+                <a href="#achievements" class="hover:text-[#00f2ff] transition-colors">// AWARDS</a>
             </div>
         </div>
     </nav>
@@ -102,8 +141,12 @@
                 <div class="inline-block px-3 py-1 border border-[#00f2ff]/30 text-[#00f2ff] text-xs font-mono mb-4">
                     STATUS: ACTIVE_DEVELOPER
                 </div>
+                <div class="mb-8 relative">
+    <img src="YOUR_PHOTO_URL.jpg" alt="Sidratul Suhan" 
+         class="w-32 h-32 rounded-full border-2 border-[#00f2ff] object-cover shadow-[0_0_20px_rgba(0,242,255,0.3)]">
+</div>
                 <h1 class="text-6xl md:text-8xl font-bold leading-tight">
-                    I BUILD <br><span class="tech-gradient">THE FUTURE.</span>
+                HI, I'M MD.Suhan<br>I BUILD <span class="tech-gradient">THE FUTURE.</span>
                 </h1>
                 <p class="text-gray-400 text-lg max-w-md font-light">
                     Specializing in high-performance digital architecture and sleek user interfaces for the modern web.
@@ -168,52 +211,116 @@
                     <span class="text-[#00f2ff] font-mono text-sm">2024 — PRESENT</span>
                     <h3 class="text-2xl font-bold mt-2">Senior Web Architect</h3>
                     <p class="text-gray-400 font-medium">Quantum Tech Solutions</p>
-                    <p class="text-gray-500 mt-4 leading-relaxed">Leading the development of decentralized dashboard interfaces using modern web stacks.</p>
+                    <p class="text-gray-500 mt-4 leading-relaxed">Leading the development of decentralized dashboard interfaces using modern web stacks. Spearheaded migration to microservices.</p>
                 </div>
                 <div class="relative pl-8 border-l-2 border-white/10 group">
                     <div class="absolute w-4 h-4 bg-white/20 -left-[9px] top-0"></div>
                     <span class="text-gray-500 font-mono text-sm">2022 — 2024</span>
                     <h3 class="text-2xl font-bold mt-2">Full Stack Developer</h3>
                     <p class="text-gray-400 font-medium">Innovate Digital</p>
-                    <p class="text-gray-500 mt-4 leading-relaxed">Optimized database queries and built responsive UI components for fintech clients.</p>
+                    <p class="text-gray-500 mt-4 leading-relaxed">Optimized database queries and built responsive UI components for fintech clients, improving load times by 40%.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="education" class="py-24 px-6">
+    <section id="projects" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 flex items-center gap-4">
+                <span class="text-[#00f2ff] font-mono text-xl">03.</span> PROJECTS_DB
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-6 flex flex-col">
+                    <div class="h-40 bg-gray-900 rounded mb-6 overflow-hidden relative group">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800" alt="Project 1" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500 group-hover:scale-110">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Nexus Analytics</h3>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow">A real-time data visualization dashboard for tracking server health metrics across cloud environments.</p>
+                    <div class="flex gap-2 mb-6">
+                        <span class="text-xs font-mono bg-[#00f2ff]/10 text-[#00f2ff] px-2 py-1 rounded">React</span>
+                        <span class="text-xs font-mono bg-[#00f2ff]/10 text-[#00f2ff] px-2 py-1 rounded">Node.js</span>
+                    </div>
+                    <div class="flex gap-4 border-t border-white/10 pt-4 mt-auto">
+                        <a href="#" class="text-sm flex items-center gap-2 hover:text-[#00f2ff] transition"><i data-lucide="external-link" class="w-4 h-4"></i> Live Demo</a>
+                        <a href="#" class="text-sm flex items-center gap-2 hover:text-[#00f2ff] transition"><i data-lucide="github" class="w-4 h-4"></i> Source Code</a>
+                    </div>
+                </div>
+                <div class="glass-card p-6 flex flex-col">
+                    <div class="h-40 bg-gray-900 rounded mb-6 overflow-hidden relative group">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="Project 2" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500 group-hover:scale-110">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Echo Protocol</h3>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow">An encrypted peer-to-peer messaging application with terminal-style UI and end-to-end security.</p>
+                    <div class="flex gap-2 mb-6">
+                        <span class="text-xs font-mono bg-[#00f2ff]/10 text-[#00f2ff] px-2 py-1 rounded">Vue.js</span>
+                        <span class="text-xs font-mono bg-[#00f2ff]/10 text-[#00f2ff] px-2 py-1 rounded">Socket.io</span>
+                    </div>
+                    <div class="flex gap-4 border-t border-white/10 pt-4 mt-auto">
+                        <a href="#" class="text-sm flex items-center gap-2 hover:text-[#00f2ff] transition"><i data-lucide="external-link" class="w-4 h-4"></i> Live Demo</a>
+                        <a href="#" class="text-sm flex items-center gap-2 hover:text-[#00f2ff] transition"><i data-lucide="github" class="w-4 h-4"></i> Source Code</a>
+                    </div>
+                </div>
+                <div class="glass-card p-6 flex flex-col">
+                    <div class="h-40 bg-gray-900 rounded mb-6 overflow-hidden relative group">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800" alt="Project 3" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition duration-500 group-hover:scale-110">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Automata AI</h3>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow">A machine learning wrapper API that automates image tagging and sorting for digital asset managers.</p>
+                    <div class="flex gap-2 mb-6">
+                        <span class="text-xs font-mono bg-[#00f2ff]/10 text-[#00f2ff] px-2 py-1 rounded">Python</span>
+                        <span class="text-xs font-mono bg-[#00f2ff]/10 text-[#00f2ff] px-2 py-1 rounded">FastAPI</span>
+                    </div>
+                    <div class="flex gap-4 border-t border-white/10 pt-4 mt-auto">
+                        <a href="#" class="text-sm flex items-center gap-2 hover:text-[#00f2ff] transition"><i data-lucide="external-link" class="w-4 h-4"></i> Live Demo</a>
+                        <a href="#" class="text-sm flex items-center gap-2 hover:text-[#00f2ff] transition"><i data-lucide="github" class="w-4 h-4"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-24 px-6 bg-white/[0.02]">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
             <div>
                 <h2 class="text-4xl font-bold mb-12 flex items-center gap-4">
-                    <span class="text-[#00f2ff] font-mono text-xl">03.</span> EDUCATION
+                    <span class="text-[#00f2ff] font-mono text-xl">04.</span> EDUCATION
                 </h2>
-                <div class="glass-card p-6 mb-4">
+                <div class="glass-card p-6 mb-6">
                     <h4 class="font-bold text-xl">B.S. in Software Engineering</h4>
-                    <p class="text-[#00f2ff]">MIT Institute of Tech</p>
-                    <p class="text-gray-500 text-sm mt-2">Class of 2022 | GPA 3.9/4.0</p>
+                    <p class="text-[#00f2ff] mt-1">Global Tech University</p>
+                    <p class="text-gray-500 text-sm mt-2">Class of 2022 | Graduated with Honors</p>
+                    <p class="text-gray-400 text-sm mt-3 border-t border-white/10 pt-3">Focused on distributed systems, algorithms, and advanced web architecture.</p>
                 </div>
                 <div class="glass-card p-6">
-                    <h4 class="font-bold text-xl">Advanced Web Certification</h4>
-                    <p class="text-[#00f2ff]">Google Cloud Training</p>
+                    <h4 class="font-bold text-xl">Advanced Higher Secondary</h4>
+                    <p class="text-[#00f2ff] mt-1">National Science College</p>
+                    <p class="text-gray-500 text-sm mt-2">Graduated 2018 | Science Major</p>
                 </div>
             </div>
+            
             <div>
                 <h2 class="text-4xl font-bold mb-12 flex items-center gap-4">
-                    <span class="text-[#00f2ff] font-mono text-xl">04.</span> ACTIVITIES
+                    <span class="text-[#00f2ff] font-mono text-xl">05.</span> CO-CURRICULAR
                 </h2>
                 <ul class="space-y-4">
-                    <li class="flex items-start gap-4 glass-card p-4">
-                        <i data-lucide="award" class="text-[#00f2ff] shrink-0"></i>
+                    <li class="flex items-start gap-4 glass-card p-5">
+                        <div class="bg-[#00f2ff]/10 p-3 rounded-full shrink-0">
+                            <i data-lucide="users" class="text-[#00f2ff] w-5 h-5"></i>
+                        </div>
                         <div>
-                            <p class="font-bold">Hackathon Winner 2025</p>
-                            <p class="text-gray-500 text-sm">First place out of 200 teams for 'SecureChain' project.</p>
+                            <p class="font-bold text-lg">Lead Tech Mentor</p>
+                            <p class="text-[#00f2ff] text-sm font-mono mb-2">OpenCode Academy (2023 - Present)</p>
+                            <p class="text-gray-400 text-sm">Volunteering weekly to teach foundational web development and JavaScript to underprivileged high school students.</p>
                         </div>
                     </li>
-                    <li class="flex items-start gap-4 glass-card p-4">
-                        <i data-lucide="code" class="text-[#00f2ff] shrink-0"></i>
+                    <li class="flex items-start gap-4 glass-card p-5">
+                        <div class="bg-[#00f2ff]/10 p-3 rounded-full shrink-0">
+                            <i data-lucide="code-2" class="text-[#00f2ff] w-5 h-5"></i>
+                        </div>
                         <div>
-                            <p class="font-bold">Open Source Contributor</p>
-                            <p class="text-gray-500 text-sm">Active contributor to major UI libraries on GitHub.</p>
+                            <p class="font-bold text-lg">Open Source Contributor</p>
+                            <p class="text-[#00f2ff] text-sm font-mono mb-2">GitHub Community (2021 - Present)</p>
+                            <p class="text-gray-400 text-sm">Active contributor to major React UI libraries. Merged over 30+ pull requests fixing bugs and improving accessibility.</p>
                         </div>
                     </li>
                 </ul>
@@ -221,13 +328,106 @@
         </div>
     </section>
 
-    <footer class="py-20 border-t border-white/5 text-center">
+    <section id="achievements" class="py-24 px-6 relative">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-16 flex items-center gap-4">
+                <span class="text-[#00f2ff] font-mono text-xl">06.</span> ACHIEVEMENTS
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-8 group text-center hover:-translate-y-2 transition-transform">
+                    <div class="w-16 h-16 mx-auto bg-[#00f2ff]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#00f2ff]/20 transition-colors">
+                        <i data-lucide="trophy" class="w-8 h-8 text-[#00f2ff]"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Hackathon Winner 2025</h3>
+                    <p class="text-gray-400 text-sm">Secured 1st place out of 200 competing teams globally for developing an innovative decentralized blockchain solution.</p>
+                </div>
+                
+                <div class="glass-card p-8 group text-center hover:-translate-y-2 transition-transform">
+                    <div class="w-16 h-16 mx-auto bg-[#00f2ff]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#00f2ff]/20 transition-colors">
+                        <i data-lucide="award" class="w-8 h-8 text-[#00f2ff]"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">AWS Certified Architect</h3>
+                    <p class="text-gray-400 text-sm">Official certification validating expertise in designing and deploying scalable, highly available, and fault-tolerant systems.</p>
+                </div>
+
+                <div class="glass-card p-8 group text-center hover:-translate-y-2 transition-transform">
+                    <div class="w-16 h-16 mx-auto bg-[#00f2ff]/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#00f2ff]/20 transition-colors">
+                        <i data-lucide="medal" class="w-8 h-8 text-[#00f2ff]"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Top Developer Award</h3>
+                    <p class="text-gray-400 text-sm">Recognized as the "Employee of the Year" at Innovate Digital for consistently delivering exceptional code quality and leadership.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 relative bg-white/[0.02]">
+    <div class="max-w-6xl mx-auto flex flex-col items-center">
+        <h2 class="text-4xl font-bold mb-16 flex items-center gap-4 self-start">
+            <span class="text-[#00f2ff] font-mono text-xl">07.</span> CONTACT_GATEWAY
+        </h2>
+        
+        <div class="flex flex-wrap justify-center gap-6">
+            <a href="https://www.facebook.com/mdsidratulsuhan/" target="_blank" class="contact-pill glass-card flex items-center p-2 rounded-full group overflow-hidden">
+                <div class="bg-[#1877F2] w-12 h-12 rounded-full flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(24,119,242,0.3)]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </div>
+                <div class="pill-text ml-4 pr-6">
+                    <p class="text-[10px] font-mono text-[#00f2ff] leading-none">NETWORK.SOCIAL</p>
+                    <p class="font-bold text-white">Facebook</p>
+                </div>
+            </a>
+
+            <a href="https://www.instagram.com/md_sidratul_suhan/" target="_blank" class="contact-pill glass-card flex items-center p-2 rounded-full group overflow-hidden">
+                <div class="bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] w-12 h-12 rounded-full flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(238,42,123,0.3)]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                </div>
+                <div class="pill-text ml-4 pr-6">
+                    <p class="text-[10px] font-mono text-[#00f2ff] leading-none">NETWORK.VISUAL</p>
+                    <p class="font-bold text-white">Instagram</p>
+                </div>
+            </a>
+
+            <a href="https://wa.me/8801758699005" target="_blank" class="contact-pill glass-card flex items-center p-2 rounded-full group overflow-hidden">
+                <div class="bg-[#25D366] w-12 h-12 rounded-full flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(37,211,102,0.3)]">
+                    <i data-lucide="phone" class="text-white w-6 h-6"></i>
+                </div>
+                <div class="pill-text ml-4 pr-6">
+                    <p class="text-[10px] font-mono text-[#00f2ff] leading-none">NETWORK.SECURE</p>
+                    <p class="font-bold text-white">WhatsApp</p>
+                </div>
+            </a>
+
+            <a href="https://bd.linkedin.com/in/sidratulsuhan" target="_blank" class="contact-pill glass-card flex items-center p-2 rounded-full group overflow-hidden">
+                <div class="bg-[#0A66C2] w-12 h-12 rounded-full flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(10,102,194,0.3)]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </div>
+                <div class="pill-text ml-4 pr-6">
+                    <p class="text-[10px] font-mono text-[#00f2ff] leading-none">NETWORK.PRO</p>
+                    <p class="font-bold text-white">LinkedIn</p>
+                </div>
+            </a>
+
+            <a href="mailto:sidratulsuhan3@gmail.com" class="contact-pill glass-card flex items-center p-2 rounded-full group overflow-hidden">
+                <div class="bg-[#7000ff] w-12 h-12 rounded-full flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(112,0,255,0.3)]">
+                    <i data-lucide="mail" class="text-white w-6 h-6"></i>
+                </div>
+                <div class="pill-text ml-4 pr-6">
+                    <p class="text-[10px] font-mono text-[#00f2ff] leading-none">NETWORK.DIRECT</p>
+                    <p class="font-bold text-white">E-Mail</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <footer class="py-20 border-t border-white/5 text-center bg-white/[0.01]">
         <div class="flex justify-center gap-8 mb-8">
             <a href="#" class="text-gray-500 hover:text-[#00f2ff] transition transform hover:scale-125"><i data-lucide="github"></i></a>
             <a href="#" class="text-gray-500 hover:text-[#00f2ff] transition transform hover:scale-125"><i data-lucide="linkedin"></i></a>
             <a href="#" class="text-gray-500 hover:text-[#00f2ff] transition transform hover:scale-125"><i data-lucide="twitter"></i></a>
         </div>
-        <p class="text-xs font-mono text-gray-700 tracking-[0.5em] uppercase">Built with Code & Caffeine © 2026</p>
+        <p class="text-xs font-mono text-gray-700 tracking-[0.5em] uppercase">Built with Code & Caffeine<br> ©Copyright Mr.X 2026</p>
     </footer>
 
     <script>
